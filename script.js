@@ -7,7 +7,6 @@ const remGuess = document.querySelector(".remGuess");
 const start = document.querySelector(".result-container");
 const estimation = document.querySelector(".estimation");
 
-// const p=document.createElement("p");
 const button=document.createElement("button");
 
 let previousGuess=[];
@@ -70,11 +69,8 @@ function checkGuess(guess) {
 function endGame() {
     userInput.value="";
     userInput.setAttribute("disabled","");
-    // p.classList.add("newStart");
-    button.classList.add("w-100", "py-2", "mb-2", "btn", "btn-outline-primary", "rounded-3", "newStart")
-    // p.innerHTML=`<h1>Start new Game</h1>`;
+    button.classList.add("w-100", "py-2", "mb-2", "btn", "btn-outline-success", "rounded-3", "newStart")
     button.innerHTML='Start New Game';
-    // start.appendChild(p);
     start.appendChild(button);
     startGame=false;
     newGame();
@@ -91,7 +87,6 @@ function newGame() {
         remGuess.innerHTML=`${11-noGuess}`;
         estimation.innerHTML="";
         userInput.removeAttribute("disabled");
-        // start.removeChild(p);
         start.removeChild(button);
     })
 }
